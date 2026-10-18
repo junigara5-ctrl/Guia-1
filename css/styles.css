@@ -1,1 +1,80 @@
+/* Colores de la marca en variables, para cambiarlos en un solo lugar */
+:root {
+  --fondo: #f4f4f2;
+  --texto: #1a1a1a;
+  --acento: #9c1c2e;
+  --linea: #d9d9d5;
+}
 
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--texto);
+  background: var(--fondo);
+}
+
+img { max-width: 100%; height: auto; }
+
+/* Encabezado */
+.site-header {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border-bottom: 4px solid var(--acento);
+}
+.site-header h1 {
+  margin: 0.5rem 0 0;
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  letter-spacing: 0.08em;
+}
+.tagline { margin: 0.25rem 0 0; color: #555; }
+
+main { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+main section { padding: 2rem 0; border-bottom: 1px solid var(--linea); }
+main section:last-child { border-bottom: none; }
+main h2 { margin-top: 0; }
+
+/* Presentación: imagen a un lado y texto al otro (Flexbox) */
+.intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+.intro img { width: 300px; }
+.intro-text { flex: 1 1 300px; max-width: 60ch; }
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--acento);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.btn:hover, .btn:focus-visible { background: var(--texto); }
+.btn:focus-visible { outline: 3px solid var(--acento); outline-offset: 3px; }
+
+/* Diseños: tres columnas que se acomodan solas (Grid) */
+.design-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.design-list p { margin: 0.5rem 0 0; text-align: center; font-weight: 600; }
+
+.how-to-buy { max-width: 60ch; }
+
+.site-footer {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  border-top: 1px solid var(--linea);
+}
